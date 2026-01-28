@@ -1,4 +1,4 @@
-package com.navigation
+package com.micaelmacedo.navigation
 
 import android.app.Application
 import android.content.res.Configuration

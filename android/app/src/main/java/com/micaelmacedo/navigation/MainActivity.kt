@@ -1,4 +1,4 @@
-package com.navigation
+package com.micaelmacedo.navigation
 
 import android.os.Build
 import android.os.Bundle
