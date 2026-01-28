@@ -1,7 +1,8 @@
-import { 
-    createBottomTabNavigator, 
+import {
+    createBottomTabNavigator,
     BottomTabScreenProps
 } from "@react-navigation/bottom-tabs";
+import { MaterialIcons } from "@expo/vector-icons";
 
 import { Home } from "@/app/Home";
 import { Product } from "@/app/Product";
@@ -20,16 +21,29 @@ export function BottomRoutes() {
         <Tab.Navigator
             initialRouteName="home"
             screenOptions={{
-                headerShown: false
+                headerShown: false,
+                tabBarActiveTintColor: "red",
+                tabBarInactiveTintColor: "#444444",
+                tabBarLabelPosition: 'beside-icon'
             }}
         >
             <Tab.Screen
                 name="home"
                 component={Home}
+                options={{
+                    tabBarLabel: "Início",
+                    tabBarIcon: ({ color, size }) =>
+                        <MaterialIcons name="home" size={size} color={color} />,
+                }}
             />
             <Tab.Screen
                 name="product"
                 component={Product}
+                options={{
+                    tabBarLabel: "Produtos",
+                    tabBarIcon: ({ color, size }) =>
+                        <MaterialIcons name="add-box" size={size} color={color} />
+                }}
             />
         </Tab.Navigator>
     )
